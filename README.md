@@ -25,15 +25,35 @@ The **CAM-MIPI-IMX415** is a 4K-capable camera module designed for Raspberry Pi,
 
 Connect the CAM-MIPI-IMX415 module to the MIPI CSI camera port on your Raspberry Pi using the provided ribbon cable. Make sure the metal contacts on the cable face the correct direction as indicated in the user manual.
 
-### 2. Enable the Camera
+### 2. Configure `/boot/config.txt`
 
-On Raspberry Pi OS, open a terminal and run:
+Open the boot configuration file for your Raspberry Pi model:
 
 ```bash
-sudo raspi-config
+# Raspberry Pi 5
+sudo nano /boot/firmware/config.txt
+
+# Raspberry Pi 4 / 3 / Zero
+sudo nano /boot/config.txt
 ```
 
-Navigate to **Interface Options → Camera** and enable it, then reboot.
+Add the following lines at the bottom of the file:
+
+```ini
+camera_auto_detect=0
+
+# For Pi 5 — CSI port 0 (default)
+dtoverlay=imx415,cam0
+
+# For Pi 5 — CSI port 1 (if using the second port)
+# dtoverlay=imx415,cam1
+```
+
+Save the file and reboot:
+
+```bash
+sudo reboot
+```
 
 ### 3. Verify Camera Detection
 
