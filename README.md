@@ -76,6 +76,15 @@ rpicam-still -o image.jpg
 rpicam-vid -t 10000 -o video.h264
 ```
 
+## Preset OS Image
+
+A pre-configured Raspberry Pi OS image with all drivers and software pre-installed is available for download:
+
+**Download**: [https://www.jianguoyun.com/p/DWqJpGAQpdSrBxil9p8GIAA](https://www.jianguoyun.com/p/DWqJpGAQpdSrBxil9p8GIAA)  
+**Password**: `exgk55`
+
+---
+
 ## Documentation
 
 For detailed hardware specifications, driver installation, and advanced configuration, please refer to the [CAM-IMX415-4K UserManual.pdf](./CAM-IMX415-4K%20UserManual.pdf) included in this repository.
